@@ -2,7 +2,7 @@
     <header>
         <!-- 头部开始 -->
         <div class="welcome">
-            Hello, I'm
+            HI,<br /> I'm
             <span class="gradientText">Yang.JIE</span>
         </div>
         <div class="description">
@@ -14,7 +14,7 @@
             <p id="typing-text"></p>
         </div>
         <div class="iconContainer">
-            <a class="iconItem" data-tip="Github" target="_blank" href="https://github.com/jiege6919">
+            <a class="iconItem" data-tip="Github" target="_blank" href="https://github.com/youngdajie">
                 <svg t="1704870335945" class="icon" viewBox="0 0 1024 1024" version="1.1"
                     xmlns="http://www.w3.org/2000/svg" p-id="2487" width="22px" height="22px">
                     <path
@@ -51,6 +51,8 @@
             <a class="iconItem" data-tip="昼夜切换">
                 <SwitchIcon />
             </a>
+            <button @click="showToast"
+                style="background: var(--project-item-bg-color);width: 48px;height: 32px;border-radius: 6px;cursor: alias;color: var(--project-item-left-title-color);">通知</button>
         </div>
         <!-- 图标容器结束 -->
     </header>
@@ -80,7 +82,18 @@ onMounted(() => {
             '没有救世的能力不是你的错，但给世界以希望后又打碎它就是一种不可饶恕的罪恶了',
             '西方人并不比东方人聪明，但是他们却找对了路',
             '邪乎到家必有鬼',
-            '我有一个梦，也许有一天，灿烂的阳光能照进黑暗森林'
+            '我有一个梦，也许有一天，灿烂的阳光能照进黑暗森林',
+            '你的无畏来源于你的无知',
+            '在中国，任何超脱飞扬的思想都会砰然坠地——现实的引力实在是太沉重了',
+            '西方人并不比东方人聪明，但是他们却找对了路',
+            '空不是无，空是一种存在，你得用空这种存在填满自己',
+            '孩子问，他们是烈士吗？妈妈说，不是。他们是敌人吗？ 不是 那他们是什么？ 他们是历史！',
+            '前进！前进！！不择手段地前进！！！ ——托马斯·维德',
+            '粮食？这不都是粮食吗？每个人看看你们周围，活生生的粮食',
+            '不理睬是最大的轻蔑',
+            '不要返航，这里不是家！',
+            '把海弄干的鱼在海干前上了陆地，从一片黑暗森林奔向另一片黑暗森林',
+            '请求一块二向箔，清理用'
         ],
         typeSpeed: 100,
         startDelay: 500,
@@ -92,6 +105,23 @@ onMounted(() => {
 
     new Typed('#typing-text', options);
 });
+
+import { useToast } from 'vue-toastification';
+
+// 调用 useToast 函数来获取 toast 实例
+const toast = useToast();
+
+// 定义 showToast 方法，用于显示 Toast
+const showToast = () => {
+    toast('全站有 SW 缓存加速，按 F5 即可全站刷新', {
+        position: 'bottom-right',
+        timeout: 30000, // 消息显示时长 (毫秒)
+    });
+    toast('本人工作特殊，联系不上，请见谅！', {
+        position: 'bottom-right',
+        timeout: 30000, // 消息显示时长 (毫秒)
+    });
+};
 
 </script>
 
